@@ -10,7 +10,8 @@ Author URI: http://www.strangerstudios.com
 
 /*
 	Define your main levels and student account levels
-	along with how many logins each gets.
+	along with how many logins each gets.  
+	Line 55 "levels" array - should be udated to reflect Main Level IDs
 */
 global $pmpro_student_account_levels;
 $pmpro_student_account_levels = array(
