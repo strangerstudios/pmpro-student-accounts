@@ -94,7 +94,7 @@ function pmprosa_pmpro_after_change_membership_level($level_id, $user_id)
 		$suser = get_user_by('login', $student_user);
 		if(empty($suser->ID))
 		{
-			$student_id = wp_insert_user(array('user_login'=>$student_user, 'user_pass'=>$student_pass, 'role'=>'student', 'user_email'=>str_replace("@", "+s@", $user->user_email)));
+			$student_id = wp_insert_user(array('user_login'=>$student_user, 'user_pass'=>$student_pass, 'role'=>'subscriber', 'user_email'=>str_replace("@", "+s@", $user->user_email)));
 			$suser = get_userdata($student_id);
 		}
 		else
