@@ -10,7 +10,8 @@ Author URI: http://www.strangerstudios.com
 
 /*
 	Define your main levels and student account levels
-	along with how many logins each gets.
+	along with how many logins each gets.  
+	Line 55 "levels" array - should be udated to reflect Main Level IDs
 */
 global $pmpro_student_account_levels;
 $pmpro_student_account_levels = array(
@@ -94,7 +95,7 @@ function pmprosa_pmpro_after_change_membership_level($level_id, $user_id)
 		$suser = get_user_by('login', $student_user);
 		if(empty($suser->ID))
 		{
-			$student_id = wp_insert_user(array('user_login'=>$student_user, 'user_pass'=>$student_pass, 'role'=>'student', 'user_email'=>str_replace("@", "+s@", $user->user_email)));
+			$student_id = wp_insert_user(array('user_login'=>$student_user, 'user_pass'=>$student_pass, 'role'=>'subscriber', 'user_email'=>str_replace("@", "+s@", $user->user_email)));
 			$suser = get_userdata($student_id);
 		}
 		else
